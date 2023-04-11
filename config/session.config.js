@@ -9,9 +9,9 @@ module.exports = app => {
             resave: true,
             saveUninitialized: false,
             cookie: {
-                // sameSite: 'none',
+                sameSite: 'none',
                 httpOnly: true,
-                maxAge: 6000000
+                maxAge: 6000000,
             },
             store: MongoStore.create({
                 // mongoUrl: process.env.MONGODB_URI || 'mongodb://localhost/basicAuth'
