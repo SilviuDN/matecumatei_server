@@ -3,6 +3,7 @@ const MongoStore = require('connect-mongo');
 
 module.exports = app => {
     const MONGO_URI =  process.env.DB_REMOTE || process.env.MONGODB_URI || "mongodb://localhost/server";
+    app.set('trust proxy', 1) // trust first proxy
     app.use(
         session({
             secret: process.env.SESS_SECRET,
@@ -12,11 +13,11 @@ module.exports = app => {
             cookie: {
                 // sameSite: 'none',
                 sameSite: false,
-                // secure: true,
+                secure: true, //Some web browsers require that the Secure attribute be set to true when the SameSite attribute has been set to 'none'
                 httpOnly: false,
                 // httpOnly: true,
                 maxAge: 6000000,
-                domain: 'herokuapp.com',
+                // domain: 'herokuapp.com',
             },
             store: MongoStore.create({
                 // mongoUrl: process.env.MONGODB_URI || 'mongodb://localhost/basicAuth'
