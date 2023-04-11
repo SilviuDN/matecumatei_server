@@ -1,23 +1,33 @@
 {
   "files": {
-    "main.css": "/static/css/main.9e1a6286.chunk.css",
-    "main.js": "/static/js/main.b7b14541.chunk.js",
-    "main.js.map": "/static/js/main.b7b14541.chunk.js.map",
+    "main.css": "/static/css/main.5e030efd.chunk.css",
+    "main.js": "/static/js/main.0082bdec.chunk.js",
+    "main.js.map": "/static/js/main.0082bdec.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a9f80a17.js",
     "runtime-main.js.map": "/static/js/runtime-main.a9f80a17.js.map",
     "static/css/2.f2512455.chunk.css": "/static/css/2.f2512455.chunk.css",
-    "static/js/2.6768ac5c.chunk.js": "/static/js/2.6768ac5c.chunk.js",
-    "static/js/2.6768ac5c.chunk.js.map": "/static/js/2.6768ac5c.chunk.js.map",
+    "static/js/2.5286e541.chunk.js": "/static/js/2.5286e541.chunk.js",
+    "static/js/2.5286e541.chunk.js.map": "/static/js/2.5286e541.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.f2512455.chunk.css.map": "/static/css/2.f2512455.chunk.css.map",
-    "static/css/main.9e1a6286.chunk.css.map": "/static/css/main.9e1a6286.chunk.css.map",
-    "static/js/2.6768ac5c.chunk.js.LICENSE.txt": "/static/js/2.6768ac5c.chunk.js.LICENSE.txt"
+    "static/css/main.5e030efd.chunk.css.map": "/static/css/main.5e030efd.chunk.css.map",
+    "static/js/2.5286e541.chunk.js.LICENSE.txt": "/static/js/2.5286e541.chunk.js.LICENSE.txt",
+    "static/media/add-to-svgrepo-com.327a7116.svg": "/static/media/add-to-svgrepo-com.327a7116.svg",
+    "static/media/delete-svgrepo-com.301b654a.svg": "/static/media/delete-svgrepo-com.301b654a.svg",
+    "static/media/down-arrow-svgrepo-com.1edfab86.svg": "/static/media/down-arrow-svgrepo-com.1edfab86.svg",
+    "static/media/duotone-eye-closed-svgrepo-com.7d44abc9.svg": "/static/media/duotone-eye-closed-svgrepo-com.7d44abc9.svg",
+    "static/media/duotone-eye-open-svgrepo-com.a7009b7d.svg": "/static/media/duotone-eye-open-svgrepo-com.a7009b7d.svg",
+    "static/media/edit-svgrepo-com.c2a53e83.svg": "/static/media/edit-svgrepo-com.c2a53e83.svg",
+    "static/media/IndexPage.css": "/static/media/linearEqSys.4cb93681.jpeg",
+    "static/media/logo.f9e09244.png": "/static/media/logo.f9e09244.png",
+    "static/media/play-svgrepo-com.c6fd441d.svg": "/static/media/play-svgrepo-com.c6fd441d.svg",
+    "static/media/up-arrow-svgrepo-com.4c6abf93.svg": "/static/media/up-arrow-svgrepo-com.4c6abf93.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.a9f80a17.js",
     "static/css/2.f2512455.chunk.css",
-    "static/js/2.6768ac5c.chunk.js",
-    "static/css/main.9e1a6286.chunk.css",
-    "static/js/main.b7b14541.chunk.js"
+    "static/js/2.5286e541.chunk.js",
+    "static/css/main.5e030efd.chunk.css",
+    "static/js/main.0082bdec.chunk.js"
   ]
 }
