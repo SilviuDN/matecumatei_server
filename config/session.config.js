@@ -10,7 +10,8 @@ module.exports = app => {
             saveUninitialized: false,
             cookie: {
                 sameSite: 'none',
-                httpOnly: true,
+                secure: true,
+                httpOnly: false,
                 maxAge: 6000000,
             },
             store: MongoStore.create({
