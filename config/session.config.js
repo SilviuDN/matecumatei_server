@@ -11,9 +11,10 @@ module.exports = app => {
             // name: 'MateCuMateiCookie', // This needs to be unique per-host.
             cookie: {
                 // sameSite: 'none',
+                sameSite: false,
                 // secure: true,
-                // httpOnly: false,
-                httpOnly: true,
+                httpOnly: false,
+                // httpOnly: true,
                 maxAge: 6000000,
             },
             store: MongoStore.create({
