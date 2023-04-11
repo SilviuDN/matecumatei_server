@@ -6,7 +6,8 @@ const corsOptions = {
         const originIsWhitelisted = whitelist.includes(origin)
         cb(null, originIsWhitelisted)
     },
-    credentials: true
+    credentials: true,
+    // exposedHeaders: 'set-cookie', // add this line
 }
 
 module.exports = (app) => {

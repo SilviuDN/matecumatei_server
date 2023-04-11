@@ -16,4 +16,10 @@ module.exports = (app) => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   app.use(cookieParser());
+
+    // Add this middleware to expose the session cookie in the response headers
+      // app.use((req, res, next) => {
+      //   res.setHeader('Access-Control-Expose-Headers', 'set-cookie');
+      //   next();
+      // });
 };
