@@ -17,8 +17,8 @@ module.exports = app => {
                 // httpOnly: false,
                 httpOnly: true,
                 maxAge: 6000000,
-                // domain: 'herokuapp.com',
-                domain: 'netlify.app',
+                domain: 'herokuapp.com',
+                // domain: 'netlify.app',
             },
             store: MongoStore.create({
                 // mongoUrl: process.env.MONGODB_URI || 'mongodb://localhost/basicAuth'
