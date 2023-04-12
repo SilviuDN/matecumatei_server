@@ -11,13 +11,14 @@ module.exports = app => {
             saveUninitialized: false,
             // name: 'MateCuMateiCookie', // This needs to be unique per-host.
             cookie: {
-                // sameSite: 'none',
+                sameSite: 'none',
                 // sameSite: false,
-                // secure: true, //Some web browsers require that the Secure attribute be set to true when the SameSite attribute has been set to 'none'
-                httpOnly: false,
-                // httpOnly: true,
+                secure: true, //Some web browsers require that the Secure attribute be set to true when the SameSite attribute has been set to 'none'
+                // httpOnly: false,
+                httpOnly: true,
                 maxAge: 6000000,
                 // domain: 'herokuapp.com',
+                domain: 'netlify.app',
             },
             store: MongoStore.create({
                 // mongoUrl: process.env.MONGODB_URI || 'mongodb://localhost/basicAuth'
