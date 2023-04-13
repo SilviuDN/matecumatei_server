@@ -15,6 +15,7 @@ module.exports = app => {
 				secure: process.env.NODE_ENV === 'production' ? 'auto' : false, //Some web browsers require that the Secure attribute be set to true when the SameSite attribute has been set to 'none'
 				httpOnly: true, 
                 maxAge: 600000,
+                path:'/',
                 // domain: 'herokuapp.com',
                 // domain: 'matecumatei.com',
                 // domain: 'railway.app',
