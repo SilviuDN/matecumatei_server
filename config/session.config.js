@@ -11,10 +11,10 @@ module.exports = app => {
             saveUninitialized: false,
             // name: 'MateCuMateiCookie', // This needs to be unique per-host.
             cookie: {
-                // sameSite: 'none',
+                sameSite: 'none',
                 // sameSite: false,
-                // secure: true, //Some web browsers require that the Secure attribute be set to true when the SameSite attribute has been set to 'none'
-                httpOnly: false,
+                secure: 'auto', //Some web browsers require that the Secure attribute be set to true when the SameSite attribute has been set to 'none'
+                httpOnly: true,
                 // httpOnly: true,
                 maxAge: 6000000,
                 // domain: 'herokuapp.com',
