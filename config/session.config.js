@@ -11,8 +11,8 @@ module.exports = app => {
             saveUninitialized: false,
             // name: 'MateCuMateiCookie', // This needs to be unique per-host.
             cookie: {
-				sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
-				secure: process.env.NODE_ENV === 'production',
+				sameSite: process.env.NODE_ENV === 'production' ? false : false,
+				secure: process.env.NODE_ENV === 'production' ? 'auto' : false,
 				httpOnly: true,
                 // sameSite: 'none',
                 // sameSite: false,
