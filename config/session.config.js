@@ -18,7 +18,9 @@ module.exports = app => {
                 httpOnly: false,
                 maxAge: 6000000,
                 // domain: 'herokuapp.com',
-                domain: 'matecumatei.com',
+                // domain: 'matecumatei.com',
+                domain: 'railway.app',
+
             },
             store: MongoStore.create({
                 // mongoUrl: process.env.MONGODB_URI || 'mongodb://localhost/basicAuth'
