@@ -19,7 +19,7 @@ module.exports = app => {
                 maxAge: 6000000,
                 // domain: 'herokuapp.com',
                 // domain: 'matecumatei.com',
-                domain: 'railway.app',
+                // domain: 'railway.app',
 
             },
             store: MongoStore.create({
