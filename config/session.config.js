@@ -7,7 +7,7 @@ module.exports = app => {
     app.use(
         session({
             secret: process.env.SESS_SECRET,
-            resave: false,
+            resave: true,
             saveUninitialized: false,
             // name: 'MateCuMateiCookie', // This needs to be unique per-host.
             cookie: {
