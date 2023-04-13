@@ -14,7 +14,7 @@ module.exports = app => {
                 // sameSite: 'none',
                 sameSite: false,
                 secure: 'auto', //Some web browsers require that the Secure attribute be set to true when the SameSite attribute has been set to 'none'
-                httpOnly: true,
+                httpOnly: false,
                 // httpOnly: true,
                 maxAge: 6000000,
                 // domain: 'herokuapp.com',
