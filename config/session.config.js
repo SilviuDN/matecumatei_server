@@ -11,8 +11,8 @@ module.exports = app => {
             saveUninitialized: false,
             // name: 'MateCuMateiCookie', // This needs to be unique per-host.
             cookie: {
-                sameSite: 'none',
-                // sameSite: false,
+                // sameSite: 'none',
+                sameSite: false,
                 secure: 'auto', //Some web browsers require that the Secure attribute be set to true when the SameSite attribute has been set to 'none'
                 httpOnly: true,
                 // httpOnly: true,
