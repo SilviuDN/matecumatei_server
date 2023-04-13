@@ -3,7 +3,7 @@ const MongoStore = require('connect-mongo');
 
 module.exports = app => {
     const MONGO_URI =  process.env.DB_REMOTE || process.env.MONGODB_URI || "mongodb://localhost/server";
-    app.set('trust proxy', 1) // trust first proxy for production, when secure: true 
+    // app.set('trust proxy', 1) // trust first proxy for production, when secure: true 
     app.use(
         session({
             secret: process.env.SESS_SECRET,
