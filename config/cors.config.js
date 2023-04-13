@@ -1,5 +1,5 @@
 const cors = require('cors')
-const whitelist = [process.env.DOMAIN_LOCAL, process.env.REACT_APP_BASE_URL, process.env.NETLIFY_BASE_URL, process.env.DOMAIN_REMOTE, process.env.NAMECHEAP_BASE_URL]
+const whitelist = [process.env.DOMAIN_LOCAL, process.env.REACT_APP_BASE_URL, process.env.NETLIFY_BASE_URL, process.env.DOMAIN_REMOTE, process.env.NAMECHEAP_BASE_URL, process.env.RAILWAY_BASE_URL, ]
 
 const corsOptions = {
     origin: (origin, cb) => {

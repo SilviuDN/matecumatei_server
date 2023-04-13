@@ -1,6 +1,7 @@
 module.exports = {
     checkLoggedUser: (req, res, next) => {
-        // console.log('************************************************')
+        console.log('************************************************')
+        console.log(req?.session)
         if (req.session.currentUser !== undefined) {
             next()
         } else {
