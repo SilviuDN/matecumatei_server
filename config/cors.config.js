@@ -7,7 +7,7 @@ const corsOptions = {
         cb(null, originIsWhitelisted)
     },
     credentials: true,
-    // exposedHeaders: 'set-cookie', // add this line
+    exposedHeaders: 'set-cookie', // add this line
 }
 
 module.exports = (app) => {
