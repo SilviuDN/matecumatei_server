@@ -97,7 +97,6 @@ router.post('/login', (req, res) => {
             }
 
             req.session.currentUser = user
-            // res.setHeader('Access-Control-Allow-Credentials', 'true') // it was already been set to true, in mozilla as well as in chrome.
             res.json(req.session.currentUser)
         })
         .catch(err => res.status(500).json({ code: 500, message: 'DB error while fetching user.', err: handleMongoooseError(err) }))
