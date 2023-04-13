@@ -13,7 +13,7 @@ module.exports = app => {
             cookie: {
                 // sameSite: 'none',
                 sameSite: false,
-                secure: true, //Some web browsers require that the Secure attribute be set to true when the SameSite attribute has been set to 'none'
+                secure: 'auto', //Some web browsers require that the Secure attribute be set to true when the SameSite attribute has been set to 'none'
                 // httpOnly: false,
                 httpOnly: false,
                 maxAge: 6000000,
