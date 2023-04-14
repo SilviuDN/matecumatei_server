@@ -96,8 +96,19 @@ router.post('/login', (req, res) => {
                 return
             }
 
-            req.session.currentUser = user
-            res.json(req.session.currentUser)
+            const sessionsCount = (user.sessionsCount || 0) + 1
+
+            User
+                .findByIdAndUpdate(user._id, { sessionsCount }, { new: true })
+                .then(updatedUser => {
+                    req.session.currentUser = updatedUser
+                    res.json(req.session.currentUser)
+                })
+                .catch(err => res.status(500).json({ code: 500, err: ['Error editing sessionsCount.']}))
+
+            // req.session.currentUser = user
+            // res.setHeader('Access-Control-Allow-Credentials', 'true') // it was already been set to true, in mozilla as well as in chrome.
+            // res.json(req.session.currentUser)
         })
         .catch(err => res.status(500).json({ code: 500, message: 'DB error while fetching user.', err: handleMongoooseError(err) }))
 })

@@ -13,7 +13,7 @@ module.exports = app => {
             cookie: {
 				sameSite: process.env.NODE_ENV === 'production' ? false : 'none',
 				secure: process.env.NODE_ENV === 'production' ? 'auto' : false, //Some web browsers require that the Secure attribute be set to true when the SameSite attribute has been set to 'none'
-				httpOnly: true, 
+				httpOnly: false, 
                 maxAge: 600000,
                 path:'/',
                 // domain: 'herokuapp.com',

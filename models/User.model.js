@@ -113,7 +113,12 @@ const userSchema = new Schema({
   replies: [{
     type: Schema.Types.ObjectId,
     ref: 'Reply'
-  }]
+  }],
+
+  sessionsCount:{
+    type: Number,
+    default: 0,
+  },
 },
 {
     timestamps: true
