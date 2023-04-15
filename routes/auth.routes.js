@@ -44,8 +44,13 @@ const User = require('./../models/User.model')
 
 router.post('/signup', (req, res) => {
 
-    const { email, pwd, name, surname, username } = req.body
+    const { email, pwd, pwd2, name, surname, username } = req.body
     // username && (username = name.trim().split(' ')[0])
+
+    if( pwd !== pwd2){
+        res.status(500).json({ code: 500, err: ['Provide the correct password in both fields.']})
+        return
+    }
 
 
     User
