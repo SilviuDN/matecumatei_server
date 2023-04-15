@@ -21,7 +21,7 @@ const { checkLoggedUser } = require('./../middleware')
 // })
 
 
-router.get('/:user_id', checkLoggedUser, (req, res) => {
+router.get('/:user_id', (req, res) => {
 
     User
         .findById(req.params.user_id)
