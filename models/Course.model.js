@@ -21,10 +21,10 @@ const courseSchema = new Schema({
     type: String,
   },
 
-  description: {
+  description: [{
     type: String,
     // unique: true -> Ideally, should be unique, but its up to you
-  },
+  }],
 
   tags: [{
     type: String, 
