@@ -85,6 +85,16 @@ router.put('/edit/:lecture_id', (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: 'Error editing lectures', err }))
 })
 
+router.put('/updateLectureViews/:lecture_id', (req, res) => {
+
+    const lecture = req.body
+
+    Lecture
+        .findByIdAndUpdate(req.params.lecture_id, lecture, { new: true })
+        .then(response => res.json(response))
+        .catch(err => res.status(500).json({ code: 500, message: 'Error editing lectures', err }))
+})
+
 router.post('/delete/:lecture_id', (req, res) => {
     const lecture_id = req.params.lecture_id
 

@@ -59,6 +59,16 @@ const lectureSchema = new Schema({
   courseId:{
     type: Schema.Types.ObjectId, ref: 'Course'
   },
+
+  views:{
+    type: Number,
+    default: 0,
+  },
+
+  anonymousViews:{
+    type: Number,
+    default: 0,
+  },
 },
 {
     timestamps: true
