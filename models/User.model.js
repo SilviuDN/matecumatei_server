@@ -4,12 +4,13 @@ const userSchema = new Schema({
   email: {
     type: String,
     unique: true, //-> Ideally, should be unique, but it's up to you		
-    // validate: {
-    // 	validator: (email) => {
-    // 		return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
-    // 	},
-    // 	message: 'The email must have a address@domani.[2-3Letters] format',
-    // },
+    validate: {
+    	validator: (email) => {
+    		return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+    	},
+    	message: 'Formatul acceptat pentru email este: adresa@domeniu.tld',
+    	// message: 'The email must have a address@domani.[2-3Letters] format',
+    },
     required: [true, 'Trebuie să introduci o adresă de email validă.'],
     // required: [true, 'You must introduce a valid email address.'],
 
@@ -21,7 +22,8 @@ const userSchema = new Schema({
 		// 	validator: (pass) => {
 		// 		return /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(pass);
 		// 	},
-		// 	message: 'The password must contain at least a number, an uppercase letter, a lowercase letter and an 8 digits length',
+		// 	message: 'Parola trebuie să conțină cel puțin un număr, o majusculă, o minusculă și să aibă o lungime de cel puțin 8 caractere',
+		// 	// message: 'The password must contain at least a number, an uppercase letter, a lowercase letter and an 8 digits length',
 		// },
 		required: [true, 'Trebuie să introduci o parolă validă.'],
 		// required: [true, 'You must introduce a valid password.'],
