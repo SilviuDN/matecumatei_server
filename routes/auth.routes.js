@@ -59,13 +59,19 @@ router.post('/signup', (req, res) => {
         .then(user => {
 
             if (user) {
-                // console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
                 res.status(400).json({ code: 400, err: ['Există deja un user înregistrat cu această adresă de email.'] })
                 // res.status(400).json({ code: 400, err: ['A user already exists with this email address.'] })
                 return
             }
 
+
+
             // toAdd: check the username
+            if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(pwd)) {
+                res.status(500).json({ code: 500, err: ['Parola trebuie să conțină cel puțin 8 caractere, dintre care cel puțin un număr, o majusculă, o minusculă.'] })
+                // res.status(500).json({ code: 500, err: ['The password does not meet the security requirements.'] })
+                return
+            }
 
             const salt = bcrypt.genSaltSync(bcryptSalt)
             const hashPass = pwd ? bcrypt.hashSync(pwd, salt) : undefined

@@ -11,7 +11,8 @@ module.exports = {
         if (err instanceof mongoose.Error.ValidationError) {
             Object.values(err.errors).map(elm => errors.push(elm.message))
         } else if (err.code === 11000) {
-            errors.push('A user is already registered with this email address or with this pseudonim.')
+            errors.push('Un utilizator este deja înregistrat cu acest email sau cu un pseudonim identic.')
+            // errors.push('A user is already registered with this email address or with this pseudonim.')
         }
 
         return errors
