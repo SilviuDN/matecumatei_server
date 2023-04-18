@@ -10,7 +10,8 @@ const userSchema = new Schema({
     // 	},
     // 	message: 'The email must have a address@domani.[2-3Letters] format',
     // },
-    required: [true, 'You must introduce a valid email address.'],
+    required: [true, 'Trebuie să introduci o adresă de email validă.'],
+    // required: [true, 'You must introduce a valid email address.'],
 
   },
 
@@ -22,13 +23,15 @@ const userSchema = new Schema({
 		// 	},
 		// 	message: 'The password must contain at least a number, an uppercase letter, a lowercase letter and an 8 digits length',
 		// },
-		required: [true, 'You must introduce a valid password.'],
+		required: [true, 'Trebuie să introduci o parolă validă.'],
+		// required: [true, 'You must introduce a valid password.'],
   },
   
   username: {
     type: String,
-    // unique: true,
-		required: [true, 'You must choose a username to represent you in our comunity.'],
+    unique: true,
+		required: [true, 'Trebuie să alegi un username care să te reprezinte în comunitatea MateCuMatei.'],
+		// required: [true, 'You must choose a username to represent you in our comunity.'],
   },
 
   role: {

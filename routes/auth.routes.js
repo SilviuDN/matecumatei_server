@@ -48,7 +48,8 @@ router.post('/signup', (req, res) => {
     // username && (username = name.trim().split(' ')[0])
 
     if( pwd !== pwd2){
-        res.status(500).json({ code: 500, err: ['Provide the correct password in both fields.']})
+        res.status(500).json({ code: 500, err: ['Introdu parola corectă în ambele câmpuri.']})
+        // res.status(500).json({ code: 500, err: ['Provide the correct password in both fields.']})
         return
     }
 
@@ -59,7 +60,8 @@ router.post('/signup', (req, res) => {
 
             if (user) {
                 // console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
-                res.status(400).json({ code: 400, err: ['A user already exists with this email address.'] })
+                res.status(400).json({ code: 400, err: ['Există deja un user înregistrat cu această adresă de email.'] })
+                // res.status(400).json({ code: 400, err: ['A user already exists with this email address.'] })
                 return
             }
 
@@ -83,7 +85,8 @@ router.post('/login', (req, res) => {
     const { email, pwd } = req.body
 
     if( !email || !pwd ){
-        res.status(400).json({ code: 401, err: ['Please provide the email and the password.'] })
+        res.status(400).json({ code: 401, err: ['Introduceți email-ul și parola.'] })
+        // res.status(400).json({ code: 401, err: ['Please provide the email and the password.'] })
         return
     }
 
@@ -92,12 +95,14 @@ router.post('/login', (req, res) => {
         .then(user => {
 
             if (!user) {
-                res.status(401).json({ code: 401, err: ['User not registered.'] })
+                res.status(401).json({ code: 401, err: ['Nu există cont pentru această adresă de email.'] })
+                // res.status(401).json({ code: 401, err: ['User not registered.'] })
                 return
             }
 
             if (bcrypt.compareSync(pwd, user.password) === false) {
-                res.status(401).json({ code: 401, err: ['Incorect password.'] })
+                res.status(401).json({ code: 401, err: ['Parolă incorectă.'] })
+                // res.status(401).json({ code: 401, err: ['Incorect password.'] })
                 return
             }
 
@@ -109,7 +114,8 @@ router.post('/login', (req, res) => {
                     req.session.currentUser = updatedUser
                     res.json(req.session.currentUser)
                 })
-                .catch(err => res.status(500).json({ code: 500, err: ['Error editing sessionsCount.']}))
+                .catch(err => res.status(500).json({ code: 500, err: ['A avut loc o eroare.']}))
+                // .catch(err => res.status(500).json({ code: 500, err: ['Error editing sessionsCount.']}))
 
             // req.session.currentUser = user
             // res.setHeader('Access-Control-Allow-Credentials', 'true') // it was already been set to true, in mozilla as well as in chrome.
@@ -124,11 +130,13 @@ router.get('/logout', (req, res) => {
     req.session.destroy((err) => {
         if (err) {
             console.log(err)
-            res.status(500).json({ code: 500, err: ['An error occurred while logging out.'] });
+            res.status(500).json({ code: 500, err: ['A avut loc o eroare la logout.'] });
+            // res.status(500).json({ code: 500, err: ['An error occurred while logging out.'] });
           } else {
             // req.session.cookie.maxAge = 0; //this one threw an error. Obviously.
             res.clearCookie('connect.sid');
-            res.status(200).json({ code: 200, err: ["You've just logged out. Goodbye!"] })
+            res.status(200).json({ code: 200, err: ["Te așteptăm să revii. Pe curând!"] })
+            // res.status(200).json({ code: 200, err: ["You've just logged out. Goodbye!"] })
             // res.redirect('/login'); // this one does nothing. Obviously. 
           }
         })
@@ -139,7 +147,8 @@ router.post('/isLoggedIn', (req, res) => {
     ? 
     res.json(req.session.currentUser) 
     : 
-    res.status(401).json({ code: 401, message: `Unauthorized operation for unidentified user: ${req.session.currentUser}` })
+    res.status(401).json({ code: 401, message: `Acțiune neautorizată pentru user neautentificat: ${req.session.currentUser}` })
+    // res.status(401).json({ code: 401, message: `Unauthorized operation for unidentified user: ${req.session.currentUser}` })
 })
 
 

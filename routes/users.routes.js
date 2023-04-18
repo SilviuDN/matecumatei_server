@@ -70,7 +70,8 @@ router.put('/edit/:user_id', checkLoggedUser, (req, res) => {
                     .then(response => res.json(response) )
                     .catch(err => res.status(500).json({ code: 500, err: ['Error editing user.']}))
             }else{
-                return res.status(500).json({ code: 500, err: ['Provide the correct current password, and a new password or uncheck the "Change password" box.']})
+                return res.status(500).json({ code: 500, err: ['Introdu parola corectă și o nouă parolă sau debifează opțiunea "Schimbă parola".']})
+                // return res.status(500).json({ code: 500, err: ['Provide the correct current password, and a new password or uncheck the "Change password" box.']})
             }
         })
         .catch(err => res.status(500).json({ code: 500, err: ['Error fetching user.'] }))
@@ -98,34 +99,6 @@ router.put('/edit/:user_id', checkLoggedUser, (req, res) => {
 })
 
 
-router.post('/signup', (req, res) => {
-
-    const { email, pwd, name, surname, username } = req.body
-    // username && (username = name.trim().split(' ')[0])
-
-
-    User
-        .findOne({ email })
-        .then(user => {
-
-            if (user) {
-                // console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
-                res.status(400).json({ code: 400, err: ['A user already exists with this email address.'] })
-                return
-            }
-
-            // toAdd: check the username
-
-            const salt = bcrypt.genSaltSync(bcryptSalt)
-            const hashPass = pwd ? bcrypt.hashSync(pwd, salt) : undefined
-
-            User
-                .create({ email, password: hashPass, name, surname, username})
-                .then((user) => res.json({ code: 200, message: 'User created.'}))
-                .catch(err => res.status(500).json({ code: 500, message: 'DB error while creating user.', err: handleMongoooseError(err) }))
-        })
-        .catch(err => res.status(500).json({ code: 500, message: 'DB error while fetching user.', err }))
-})
 
 module.exports = router
 
