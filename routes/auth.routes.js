@@ -153,8 +153,8 @@ router.post('/isLoggedIn', (req, res) => {
     ? 
     res.json(req.session.currentUser) 
     : 
-    res.status(401).json({ code: 401, message: `Acțiune neautorizată pentru user neautentificat: ${req.session.currentUser}` })
-    // res.status(401).json({ code: 401, message: `Unauthorized operation for unidentified user: ${req.session.currentUser}` })
+    // res.status(401).json({ code: 401, message: `Acțiune neautorizată pentru user neautentificat: ${req.session.currentUser}` })
+    res.status(401).json({ code: 401, message: `Unauthorized operation for unidentified user: ${req.session.currentUser}` })
 })
 
 
